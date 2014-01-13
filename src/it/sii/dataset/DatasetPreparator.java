@@ -22,7 +22,7 @@ public class DatasetPreparator {
 		
 		File fileResult = utilities.newFileIstance(fileDS_NoExtension+"_training.json");
 		File fileTestResult = utilities.newFileIstance(fileDS_NoExtension+"_test.json");
-		File fileResultsResult = utilities.newFileIstance(fileDS_NoExtension+"_result.json");
+		File fileResultsResult = utilities.newFileIstance(fileDS_NoExtension+"_realratings.json");
 		
 		
 		try {
