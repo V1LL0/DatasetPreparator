@@ -43,8 +43,8 @@ public class Utilities {
 		
 		String[] jsonParts = line.split(",");
 		String stars = jsonParts[5].split(": ")[1];
-		String businessID = jsonParts[jsonParts.length-1].split(": ")[1].split("}")[0];
-		String userID = jsonParts[3].split(": ")[1];
+		String businessID = jsonParts[jsonParts.length-1].split(": ")[1].split("}")[0].split("\"")[1];
+		String userID = jsonParts[3].split(": ")[1].split("\"")[1];
 		
 		
 		try {
