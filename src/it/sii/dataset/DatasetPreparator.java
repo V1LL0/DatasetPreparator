@@ -5,6 +5,7 @@ import it.sii.dataset.utilities.Utilities;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class DatasetPreparator {
 		
 		File fileDataset = utilities.newFileIstance(fileDatasetName);
 		
-		File fileResult = utilities.newFileIstance(fileDS_NoExtension+"_training.dat");
+		File fileResult = utilities.newFileIstance(fileDS_NoExtension+"_training.json");
 		File fileTestResult = utilities.newFileIstance(fileDS_NoExtension+"_test.dat");
 		File fileResultsResult = utilities.newFileIstance(fileDS_NoExtension+"_realratings.dat");
 		
@@ -28,6 +29,7 @@ public class DatasetPreparator {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(fileDataset));
+						
 			FileWriter writer = new FileWriter(fileResult);
 			FileWriter writerTest = new FileWriter(fileTestResult);
 			FileWriter writerResults = new FileWriter(fileResultsResult);
@@ -36,11 +38,21 @@ public class DatasetPreparator {
 			while(reader.ready()){
 				String line = reader.readLine();
 				if(utilities.percentageGuidedBoolean(percentage))
-					writer.write(line+"\n");		
+					writer.write(line+"\n");
 				else{
 					utilities.writeLineTestAndResult(line, writerTest, writerResults);
 				}
+				
 			}
+
+			writer.flush();
+			writer.close();
+
+			writerTest.flush();
+			writerTest.close();
+
+			writerResults.flush();
+			writerResults.close();
 			
 	/**
 	 * Prove di stampa:		
