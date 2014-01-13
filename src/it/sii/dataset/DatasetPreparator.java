@@ -20,9 +20,9 @@ public class DatasetPreparator {
 		
 		File fileDataset = utilities.newFileIstance(fileDatasetName);
 		
-		File fileResult = utilities.newFileIstance(fileDS_NoExtension+"_training.json");
-		File fileTestResult = utilities.newFileIstance(fileDS_NoExtension+"_test.json");
-		File fileResultsResult = utilities.newFileIstance(fileDS_NoExtension+"_realratings.json");
+		File fileResult = utilities.newFileIstance(fileDS_NoExtension+"_training.dat");
+		File fileTestResult = utilities.newFileIstance(fileDS_NoExtension+"_test.dat");
+		File fileResultsResult = utilities.newFileIstance(fileDS_NoExtension+"_realratings.dat");
 		
 		
 		
